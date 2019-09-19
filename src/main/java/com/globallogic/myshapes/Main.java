@@ -54,6 +54,14 @@ public class Main {
 
         System.out.println("sumArea = " + sumArea(myShapes));
         System.out.println("getNumOfShapes = " + Shape.getNumOfShapes());
+
+        System.out.println("---------------------------");
+
+        System.out.println("sumRectangleArea = " + sumRectangleArea(myShapes));
+        System.out.println("sumCircleArea = " + sumCircleArea(myShapes));
+        System.out.println("sumTriangleArea = " + sumTriangleArea(myShapes));
+
+
     }
 
     static double sumArea(Shape[] shapes) {
@@ -61,6 +69,42 @@ public class Main {
 
         for (Shape s : shapes) {
             area += s.calcArea();
+        }
+
+        return area;
+    }
+
+    static double sumRectangleArea(Shape[] shapes) {
+        double area = 0.0;
+
+        for (Shape s : shapes) {
+            if (s instanceof Rectangle) {
+                area += s.calcArea();
+            }
+        }
+
+        return area;
+    }
+
+    static double sumCircleArea(Shape[] shapes) {
+        double area = 0.0;
+
+        for (Shape s : shapes) {
+            if (s instanceof Circle) {
+                area += s.calcArea();
+            }
+        }
+
+        return area;
+    }
+
+    static double sumTriangleArea(Shape[] shapes) {
+        double area = 0.0;
+
+        for (Shape s : shapes) {
+            if (s instanceof Triangle) {
+                area += s.calcArea();
+            }
         }
 
         return area;
